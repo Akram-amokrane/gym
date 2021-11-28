@@ -1,0 +1,71 @@
+.payment .user-info {
+  width: 100%;
+  height: auto;
+  padding: 15px;
+}
+
+.payment .user-info-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment .user-info-title h1 {
+  font-size: 18px;
+  word-wrap: unset;
+  word-break: keep-all;
+  min-inline-size: fit-content;
+  padding: 0 5px;
+}
+
+.payment .user-info-title span {
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+}
+
+.payment .user-info tr {
+  font-size: 15px;
+}
+
+.payment .user-info tr > :first-child {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+.payment .new-payment {
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+.payment .new-payment .duration {
+  width: 100%;
+}
+
+#add-payment-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.payment .payment-total {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.payment .payment-total tr {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.payment .payment-total tr > td {
+  padding: 5px 10px;
+}
+
+.payment .payment-total tr > :last-child {
+  color: #ff4040;
+}

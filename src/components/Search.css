@@ -1,0 +1,29 @@
+#search {
+  position: relative;
+  min-width: 200px;
+  min-height: 40px;
+}
+
+#search > input {
+  border: none;
+  background-color: #88888820;
+  border-radius: 12px;
+  padding: 8px 15px;
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  color: #666;
+}
+
+#search > .search-icon {
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  font-size: 18px;
+  color: #888;
+  cursor: pointer;
+}
+
+#search > .search-icon:hover {
+  color: #333;
+}

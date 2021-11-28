@@ -1,0 +1,59 @@
+.accordion {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
+
+.accordion > input {
+  display: none;
+}
+
+.accordion .accord-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  color: #888;
+  cursor: pointer;
+  z-index: 10;
+  background-color: #fff;
+}
+
+.accordion .accord-header label {
+  font-size: 18px;
+  padding-top: 5px;
+}
+
+.accordion .accord-header:hover {
+  color: #4766ff;
+  border-color: #4766ff;
+}
+
+.accordion .accord-body {
+  width: 100%;
+  height: auto;
+  padding: 15px 5px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  margin-top: -12px;
+  top: 80%;
+  transition: all 0.3s ease-out;
+  transform-origin: top center;
+  transform: scaleY(0);
+  display: none;
+}
+
+.accordion input:checked ~ .accord-body {
+  transform: scaleY(1);
+  display: block;
+  transition: all 0.3s ease-out;
+}

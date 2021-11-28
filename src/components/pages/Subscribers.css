@@ -1,0 +1,31 @@
+#subs {
+  width: 100%;
+  height: 100%;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+#subs .subs-header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#subs .subs-header h1 {
+  color: #111;
+  padding: 0 12px;
+}
+
+#subs .subs-body {
+  width: 100%;
+  height: 100%-80px;
+  overflow: auto;
+}
+
+#subs-add-user {
+  margin-right: 25px;
+}

@@ -1,0 +1,36 @@
+.tab-subs-row {
+  color: #333;
+}
+
+.tab-subs-row td {
+  padding: 6px 0 6px 3px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.tab-subs-row .row-icons ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 15px;
+  opacity: 0;
+  transition: all 0.2s ease-out;
+  color: #888;
+  cursor: pointer;
+}
+
+.tab-subs-row:hover .row-icons > ul {
+  opacity: 1;
+}
+
+.tab-subs-row .row-icons .row-ic:hover {
+  color: #333;
+}
+
+.tab-subs-row .row-col-id {
+  display: none;
+}

@@ -1,0 +1,18 @@
+#add-user-btn{
+    width: 100%;
+    padding: 12px;
+
+}
+
+#add-user-btn:hover{
+    border: 2px solid #3760ff;
+}
+
+#dialog .add-user-form{
+    padding: 25px 25px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

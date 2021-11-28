@@ -1,0 +1,64 @@
+.radio-box{
+    width: 100%;
+}
+
+.radio-box label{
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.radio-box .radio-label{
+    color: #888;
+    font-size: 14px;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    display: inline-block;
+}
+
+.radio-box input{
+    appearance: none;
+    display: none;
+}
+
+.radio-box .radio-btn{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.radio-box input:checked ~ label{
+    color: #fff;
+    background: linear-gradient(90deg, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);}
+
+.radio-box .radio-group-box{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border:1px solid #aaa;
+    border-radius: 5px;
+}
+
+.radio-box input:focus{
+    border-color: #000;
+}
+
+.radio-box .input-error{
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    color: #ff2020;
+    width: 100%;
+    padding: 3px 0 ;
+    font-size: 16px;
+}
+
+.radio-box .input-error .error-msg{
+    display: inline-block;
+    padding:  0 5px;
+    font-size: 13px;
+}

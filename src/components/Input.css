@@ -1,0 +1,51 @@
+.input-box{
+    width: 100%;
+}
+
+.input-box label{
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.input-box input{
+    width: 100%;
+    padding: 10px 10px;
+    border: 1px solid #888;
+    border-radius: 3px;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    background: transparent;
+}
+
+.input-box input:focus{
+    border-color: #000;
+}
+
+.input-box .input-wrong{
+    border: 1px solid #ff4040;
+}
+
+.input-box .input-success{
+    border: 1px solid #3760ff;
+}
+
+.input-box .input-error{
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    color: #ff2020;
+    width: 100%;
+    padding: 3px 0 ;
+    font-size: 16px;
+}
+
+.input-box .input-error .error-msg{
+    display: inline-block;
+    padding:  0 5px;
+    font-size: 13px;
+}
+
+.input-box .error-show{
+    display: flex;
+}

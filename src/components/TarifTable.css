@@ -1,0 +1,22 @@
+#tab-tarif {
+  overflow: auto;
+  position: relative;
+  border-collapse: collapse;
+  border-radius: 5px;
+}
+
+#tab-tarif thead {
+  color: #888;
+  margin: 10px;
+  text-align: left;
+  font-size: 14px;
+  background-color: #fff;
+  text-align: center;
+}
+
+#tab-tarif th {
+  padding: 10px;
+  z-index: 10;
+  background-color: #fff;
+  border: 1px solid #888;
+}

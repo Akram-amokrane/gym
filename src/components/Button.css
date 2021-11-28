@@ -1,0 +1,51 @@
+.btn{
+    position: relative;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: all 0.3s ease-out;
+}
+
+.primary--btn{
+    background-color: #3467e2;
+    color: #fff;
+}
+
+.primary--btn:hover{
+    color: #3467e2;
+    background-color: #fff;
+}
+
+.secondary--btn{
+    background-color: transparent;
+    border: 2px solid #3467e2;
+    color: #3467e2;
+}
+
+.secondary--btn:hover{
+    background-color: #3467e2;
+    color: #fff;
+}
+
+.medium--btn{
+    padding: 5px 0px ;
+    width: 100px;
+}
+
+.large--btn{
+    padding: 5px 0px;
+    width: 120px;
+}
+
+.btn .btn-icon{
+    position: absolute;
+    left: 5px;
+    vertical-align: baseline;
+    font-size: 18px;
+    padding-top: 3px;
+}

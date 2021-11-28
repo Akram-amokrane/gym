@@ -1,0 +1,24 @@
+#tab-subs {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+}
+
+#tab-subs thead {
+  width: 100%;
+  color: #888;
+  margin: 10px;
+  text-align: left;
+  font-size: 14px;
+  position: sticky;
+  background-color: #fff;
+}
+
+#tab-subs th {
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
+}

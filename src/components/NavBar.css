@@ -1,0 +1,108 @@
+#navbar {
+  width: 60px;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  position: fixed;
+  left: 0;
+  top: 40px;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: all 0.3s ease-out;
+  z-index: 10;
+  border-right: 1px solid #eee;
+}
+
+#navbar.navbar-slide {
+  width: 250px;
+}
+
+#navbar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+#navbar ul > li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#navbar .navbar-top {
+  height: 20%;
+}
+
+#navbar .navbar-slide-toggle {
+  padding: 10px 0;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+#navbar .navbar-slide-toggle:hover {
+  color: #ff4040;
+}
+
+#navbar .navbar-logo img {
+  width: 40px;
+  height: auto;
+  margin: 10px 12px;
+}
+
+#navbar .navbar-middle {
+  height: 60%;
+}
+
+#navbar .navbar-link {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  padding: 10px 0;
+  transition: all 0.3s ease-out;
+  width: 100%;
+}
+
+#navbar .navbar-link:hover > * {
+  color: #ff4040;
+}
+
+#navbar .navbar-icons {
+  font-size: 30px;
+  margin: 0 16px;
+}
+
+#navbar .navbar-link .navbar-icons-title {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  width: 100%;
+  position: fixed;
+  left: 60px;
+  visibility: hidden;
+  font-weight: bold;
+  vertical-align: bottom;
+  display: flex;
+  flex-direction: row;
+}
+
+#navbar .navbar-link .navbar-title-slide {
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.3s ease-out;
+}
+
+#navbar input[name="navbar-check"] {
+  position: absolute;
+}
+
+#navbar input[name="navbar-check"]:checked ~ label > .navbar-link {
+  border-left: 2px solid #ff4040;
+}

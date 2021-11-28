@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import NavBar from "./components/NavBar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import WindowBar from "./components/WindowBar";
+import Dashboard from "./components/pages/Dashboard";
+import Subscribers from "./components/pages/Subscribers";
+import Settings from "./components/pages/Settings";
+import Calendar from "./components/pages/Calendar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Router>
+        <WindowBar resizable={true} />
+        <NavBar />
+        <div id='fragment'>
+          <Routes>
+            <Route path='/' exact element={<Dashboard />} />
+            <Route path='/users' element={<Subscribers />} />
+            <Route path='/calendar' element={<Calendar />} />
+            <Route path='/settings' element={<Settings />} />
+          </Routes>
+        </div>
+      </Router>
     </div>
   );
 }

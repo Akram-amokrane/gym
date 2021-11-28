@@ -1,0 +1,40 @@
+.tab-tarif-row {
+  color: #333;
+}
+
+.tab-tarif-row td {
+  font-weight: bold;
+  font-size: 15px;
+  border: 1px solid #888;
+  text-align: center;
+  padding: 6px;
+}
+
+.tab-tarif-row .row-icons {
+  border: none;
+}
+
+.tab-tarif-row .row-icons ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 18px;
+  opacity: 0;
+  transition: all 0.2s ease-out;
+  color: #888;
+  cursor: pointer;
+}
+
+.tab-tarif-row:hover .row-icons > ul {
+  opacity: 1;
+}
+
+.tab-tarif-row .row-icons .row-ic:hover {
+  color: #333;
+}
+
+.tab-tarif-row .row-col-id {
+  display: none;
+}

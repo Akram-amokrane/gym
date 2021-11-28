@@ -1,0 +1,60 @@
+.combo-box {
+  z-index: 10;
+}
+
+.combobox label {
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.combo-box {
+  width: 100%;
+  max-height: 40px;
+  border: 1px solid #888;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.combo-box .combo-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 10px;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.combo-box:hover {
+  color: #3760ff;
+  border-color: #3760ff;
+}
+
+.combo-box .options-view {
+  width: 100%;
+  border: 1px solid #888;
+  border-radius: 0 0 5px 5px;
+  transition: all 0.3s ease-out;
+  display: none;
+  margin-top: 1px;
+  position: relative;
+  z-index: 10;
+}
+
+.combo-box .options-view > div {
+  width: 100%;
+  height: auto;
+  padding: 8px 10px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.combo-box .options-view > div:hover {
+  background-color: #eee;
+}
+
+.combo-box .options-show {
+  display: block;
+}
