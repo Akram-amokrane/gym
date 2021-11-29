@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react/cjs/react.development";
-import { GetDate, getStrDate, parseURLParams } from "../../Constants";
+import { GetDate, parseURLParams } from "../../Constants";
 import WindowBar from "../WindowBar";
 import Toast from "../Toast";
 import Input from "../Input";
@@ -9,11 +9,14 @@ import ComboBox from "../ComboBox";
 import Button from "../Button";
 import TarifCombo from "../TarifCombo";
 import moment from "moment";
+import Progress from "../Progress";
 
 function Payment() {
   const userId = parseURLParams(window.location.href).data;
-  const date = GetDate();
+  const [progress, setProgress] = useState(false);
+  const [date, setDate] = useState(GetDate());
   const [user, setUser] = useState();
+  const [lastPayment, setLastPayment] = useState({});
   const [toast, setToast] = useState({
     type: "",
     message: "",
@@ -47,6 +50,10 @@ function Payment() {
       .where({ id: userId })
       .then((data) => {
         setUser(data[0]);
+        console.log(data[0]);
+        if (data[0].last_payment !== 0) {
+          getLastPayment(data[0]);
+        }
       });
   };
 
@@ -54,14 +61,28 @@ function Payment() {
     getInfos();
   }, []);
 
+  const getLastPayment = (user) => {
+    Window.knex
+      .select()
+      .from("subscription")
+      .where({ id: user.last_payment })
+      .then((data) => {
+        setLastPayment(data[0]);
+        setDate(data[0].end_date);
+        changeData("start_data", data[0].end_date);
+        console.log("last payment:", data[0]);
+      });
+  };
+
   const addPayment = () => {
-    if (data.total == 0) {
+    if (data.total === 0) {
       setToast({
         type: "error",
         message: "Tous les champs sont obligatoires",
         show: true,
       });
     } else {
+      setProgress(true);
       Window.knex("subscription")
         .insert({
           user_id: user.id,
@@ -71,14 +92,35 @@ function Payment() {
           duration: data.duration,
           total: data.total,
         })
-        .then(() => {
-          setToast({
-            type: "info",
-            message: "Abonnement ajouter",
-            show: true,
-          });
+        .then((id) => {
+          Window.knex("users")
+            .where({ id: user.id })
+            .update({ last_payment: id[0] })
+            .then(() => {
+              setProgress(false);
+              setToast({
+                type: "info",
+                message: "Abonnement ajouter",
+                show: true,
+              });
+
+              Window.ipcRenderer.send("window:subs:getAll");
+              getInfos();
+              initFields();
+            });
         });
     }
+  };
+
+  const initFields = () => {
+    const field = (id) => document.getElementById(id);
+    field("start_date").value = "";
+    field("duration").value = 0;
+    setData({
+      start_date: date,
+      total: 0,
+      unite: 1,
+    });
   };
 
   useEffect(() => {
@@ -86,10 +128,12 @@ function Payment() {
     if (
       data.hasOwnProperty("start_date") &&
       data.hasOwnProperty("unite") &&
-      data.hasOwnProperty("duration")
+      data.hasOwnProperty("duration") &&
+      data.hasOwnProperty("tarif") &&
+      data.tarif !== undefined
     ) {
       let total_price = data.duration * data.unite * data.tarif.price;
-      let start_date = new Date(data.start_date);
+      let start_date = document.getElementById("start_date").value;
       let final_date = moment(start_date).add(
         data.duration * data.unite,
         "months"
@@ -101,6 +145,7 @@ function Payment() {
         end_date: final_date.format("YYYY-MM-DD"),
       }));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.duration, data.start_date, data.unite, data.tarif]);
 
   return (
@@ -116,6 +161,8 @@ function Payment() {
         message={toast.message}
         hideFunc={hideToast}
       />
+
+      <Progress show={progress} />
       {user !== undefined ? (
         <div id='dialog'>
           <div className='payment'>

@@ -46,7 +46,7 @@ function ComboBox({ options, selectHandler, data, label, required }) {
         <div className={`options-view ${show ? "options-show" : ""}`}>
           {options
             ? options.map((option) => (
-                <div id={option.id} onClick={changeSelected}>
+                <div id={option.id} key={option.id} onClick={changeSelected}>
                   {option.label}
                 </div>
               ))

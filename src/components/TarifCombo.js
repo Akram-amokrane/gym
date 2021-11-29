@@ -17,6 +17,7 @@ function TarifCombo({ selectHandler, data, label, required, sexe }) {
     setSelected(sel);
     selectHandler(data, sel);
     setShow(false);
+    console.log(sel);
   };
 
   useEffect(() => {
@@ -28,6 +29,7 @@ function TarifCombo({ selectHandler, data, label, required, sexe }) {
         setTarifs(tarifs);
         setSelected(tarifs[0]);
         selectHandler(data, tarifs[0]);
+        console.log(data, tarifs[0]);
       });
   }, []);
 
@@ -58,6 +60,7 @@ function TarifCombo({ selectHandler, data, label, required, sexe }) {
                 <div
                   className='tarif-item'
                   id={option.id}
+                  key={option.id}
                   onClick={changeSelected}>
                   <div className='tarif-top'>
                     <div className='tarif-title'>{option.label}</div>

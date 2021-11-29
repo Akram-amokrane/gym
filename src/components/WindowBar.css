@@ -1,74 +1,73 @@
-#winbar{
-    width: 100vw;
-    height: 40px;
-    background-color: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    align-items: center;
+#winbar {
+  width: 100vw;
+  height: 40px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  z-index: 100;
 }
 
-#winbar .winbar-drag{
-    -webkit-app-region: drag;
-    width: 80%;
-    height: 100%;
-    z-index: -1;
-    position: relative;
+#winbar .winbar-drag {
+  -webkit-app-region: drag;
+  width: 80%;
+  height: 100%;
+  z-index: -1;
+  position: relative;
 }
 
-#winbar .winbar-drag .winbar-logo{
-    position: absolute;
-    height: 40px;
-    left: 0;
-    width: auto;
-    padding: 10px;
+#winbar .winbar-drag .winbar-logo {
+  position: absolute;
+  height: 40px;
+  left: 0;
+  width: auto;
+  padding: 10px;
 }
 
-#winbar .winbar-drag .winbar-title{
-    position: absolute;
+#winbar .winbar-drag .winbar-title {
+  position: absolute;
 
-    width: auto;
-    padding: 10px;
-    font-size: 15px;
-    left: 40px;
+  width: auto;
+  padding: 10px;
+  font-size: 15px;
+  left: 40px;
 }
 
-
-
-#winbar .winbar-opt{
-    position: absolute;
-    top: 0;
-    right: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    z-index: 10;
+#winbar .winbar-opt {
+  position: absolute;
+  top: 0;
+  right: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  z-index: 10;
 }
 
-#winbar .winbar-opt li{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 100%;
-    color: #aaa;
-    cursor: pointer;
-    font-size: 18px;
+#winbar .winbar-opt li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 100%;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 18px;
 }
 
-#winbar .winbar-opt-def:hover{
-    background-color: #eee;
-    color: #333;
+#winbar .winbar-opt-def:hover {
+  background-color: #eee;
+  color: #333;
 }
 
-#winbar .winbar-opt-close:hover{
-    background-color: #ff4040;
-    color: #fff;
+#winbar .winbar-opt-close:hover {
+  background-color: #ff4040;
+  color: #fff;
 }

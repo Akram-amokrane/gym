@@ -1,11 +1,25 @@
 .tab-subs-row {
   color: #333;
+  border: none;
+  border-spacing: 0;
+  margin: 0;
+}
+
+.tab-subs-row.red {
+  background-color: #ff202060;
+}
+
+.tab-subs-row.orange {
+  background-color: #ff602060;
 }
 
 .tab-subs-row td {
   padding: 6px 0 6px 3px;
   font-weight: bold;
   font-size: 15px;
+  border: none;
+  border-spacing: 0;
+  margin: 0;
 }
 
 .tab-subs-row .row-icons ul {
@@ -25,6 +39,37 @@
 
 .tab-subs-row:hover .row-icons > ul {
   opacity: 1;
+}
+
+.tab-subs-row .row-icons li {
+  position: relative;
+}
+
+.tab-subs-row .row-icons li > .tooltip {
+  position: absolute;
+  bottom: 100%;
+  padding: 5px 6px;
+  background-color: #333;
+  color: #fff;
+  right: 0%;
+  display: none;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+
+.tab-subs-row .row-icons li > .tooltip::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 90%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tab-subs-row .row-icons .row-ic:hover ~ .tooltip {
+  display: block;
 }
 
 .tab-subs-row .row-icons .row-ic:hover {

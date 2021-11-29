@@ -31,7 +31,7 @@ function TableSubs({ searchVal }) {
             <th>Prénom</th>
             <th>Date de naissance</th>
             <th>Date d'inscription</th>
-            <th>Séance/semaine</th>
+            <th>Fin d'abonnement</th>
             <th>Credit</th>
           </tr>
         </thead>

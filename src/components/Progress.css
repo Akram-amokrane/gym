@@ -1,0 +1,60 @@
+.progress {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  position: fixed;
+  background-color: #00000060;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.progress.show {
+  display: flex;
+}
+
+.progress .circular {
+  width: 100px;
+  height: 100px;
+  border-top: 10px solid #3760ff;
+  position: absolute;
+  border-radius: 100%;
+  -webkit-animation: rotate-center 0.6s ease-in both infinite;
+  animation: rotate-center 0.6s ease-in both infinite;
+}
+
+.progress .logo-container img {
+  width: 40px;
+  height: 40px;
+}
+
+.progress .logo-container {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 100%;
+  padding: 25px;
+  width: 90px;
+  height: 90px;
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

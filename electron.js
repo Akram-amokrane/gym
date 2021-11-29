@@ -82,9 +82,9 @@ ipcMain.on("Window:show-dialog", (event, data) => {
 });
 
 function sentSubs() {
-  knex
-    .select()
-    .from("users")
+  knex("users")
+    .leftJoin("subscription", "users.last_payment", "=", "subscription.id")
+    .select("users.*", "subscription.end_date")
     .then((data) => {
       mainWindow.webContents.send("window:subs:setAll", data);
     })

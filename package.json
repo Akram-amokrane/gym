@@ -12,6 +12,7 @@
     "knex": "^0.95.14",
     "moment": "^2.29.1",
     "react": "^17.0.2",
+    "react-big-calendar": "^0.38.1",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.0.2",

@@ -29,7 +29,7 @@ function Settings() {
   };
 
   const tarifHandler = (tag, val) => {
-    setTarifData((prevState) => ({ ...prevState, [tag]: val }));
+    setTarifData((prevState) => ({ ...prevState, [tag]: val.toLowerCase() }));
     console.log(tarifData);
   };
 
@@ -136,15 +136,6 @@ function Settings() {
               <TarifTable />
             </div>
           </div>
-        </Accordion>
-        <Accordion title='Tarifs' id='a' group='settings'>
-          Hello World
-        </Accordion>
-        <Accordion title='Tarifs' id='b' group='settings'>
-          Hello World
-        </Accordion>
-        <Accordion title='Tarifs' id='c' group='settings'>
-          Hello World
         </Accordion>
       </div>
     </div>

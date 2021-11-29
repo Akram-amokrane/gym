@@ -12,6 +12,7 @@ function Input({
   focused,
   changeHandler,
   value,
+  disable,
 }) {
   const [error, setError] = useState("");
   const [success, setsuccess] = useState(false);
@@ -55,7 +56,8 @@ function Input({
         onChange={valueChange}
         className={`${error !== "" ? "input-wrong" : ""} ${
           success && error === "" ? "input-success" : ""
-        }`}></input>
+        }`}
+        ></input>
       <div className={`input-error ${error !== "" ? "error-show" : ""}`}>
         <RiErrorWarningLine />
         <p className='error-msg'>{error}</p>

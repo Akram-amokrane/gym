@@ -5,9 +5,12 @@ import Input from "../Input";
 import RadioBtn from "../RadioBtn";
 import Toast from "../Toast";
 import WindowBar from "../WindowBar";
+import Progress from "../Progress";
+
 import "./AddUser.css";
 
 function AddUser() {
+  const [progress, setProgress] = useState(false);
   const date = GetDate();
   const [data, setData] = useState({
     first_name: "",
@@ -23,7 +26,7 @@ function AddUser() {
   });
 
   const setValue = (tag, value) => {
-    setData((prevState) => ({ ...prevState, [tag]: value }));
+    setData((prevState) => ({ ...prevState, [tag]: value.toLowerCase() }));
   };
 
   const hideToast = () => {
@@ -46,11 +49,13 @@ function AddUser() {
         show: true,
       });
     } else {
+      setProgress(true);
       Window.ipcRenderer.send("addUser:user", data);
     }
   };
 
   Window.ipcRenderer.on("window:state", (event, data) => {
+    setProgress(false);
     setToast({
       type: data.type,
       message: data.message,
@@ -81,6 +86,7 @@ function AddUser() {
         message={toast.message}
         hideFunc={hideToast}
       />
+      <Progress show={progress} />
       <div id='dialog'>
         <div className='add-user-form'>
           <Input
