@@ -34,3 +34,10 @@ export const parseURLParams = (url) => {
 export const getStrDate = (date) => {
   return `${date.getFullYear()}/${date.getMonth()}/${date.getDay()}`;
 };
+
+export const currencyFormat = (currency) => {
+  return new Intl.NumberFormat("fr-DZ", {
+    style: "currency",
+    currency: "DZD",
+  }).format(currency);
+};

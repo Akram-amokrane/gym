@@ -23,6 +23,13 @@ function TabSubsRow({ user }) {
     });
   };
 
+  const showHistory = () => {
+    Window.ipcRenderer.send("Window:show-dialog", {
+      dialog: "history",
+      data: user.id,
+    });
+  };
+
   const getRowState = () => {
     const today = moment();
     const after_five_days = moment().add(5, "days");
@@ -62,7 +69,7 @@ function TabSubsRow({ user }) {
               <span className='tooltip'>Abonnement</span>
             </li>
             <li>
-              <MdHistory className='row-ic' />
+              <MdHistory className='row-ic' onClick={showHistory} />
               <span className='tooltip'>Historique</span>
             </li>
           </ul>

@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useState } from "react/cjs/react.development";
+import React, { useEffect,useState } from "react";
 import { GetDate, parseURLParams } from "../../Constants";
 import WindowBar from "../WindowBar";
 import Toast from "../Toast";
@@ -89,7 +88,7 @@ function Payment() {
           tarif_id: data.tarif.id,
           start_date: data.start_date,
           end_date: data.end_date,
-          duration: data.duration,
+          duration: data.duration * data.unite,
           total: data.total,
         })
         .then((id) => {

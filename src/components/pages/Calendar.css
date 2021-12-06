@@ -1,0 +1,10 @@
+#calendar {
+  width: 100%;
+  height: 100%;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-top: -5px;
+  margin-left: -2.5px;
+}

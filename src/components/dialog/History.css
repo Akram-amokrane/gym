@@ -1,0 +1,64 @@
+.history .user-info {
+  width: 100%;
+  height: auto;
+  padding: 15px;
+}
+
+.history .user-info-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.history .user-info-title h1 {
+  font-size: 18px;
+  word-wrap: unset;
+  word-break: keep-all;
+  min-inline-size: fit-content;
+  padding: 0 5px;
+}
+
+.history .user-info-title span {
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+}
+
+.history .user-info tr {
+  font-size: 15px;
+}
+
+.history .user-info tr > :first-child {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+.history .new-history {
+  width: 100%;
+  height: auto;
+  max-height: 280px;
+  padding: 10px;
+}
+
+.history .new-history table {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  border-collapse: collapse;
+}
+
+.history .new-history table td {
+  border: 1px solid #aaa;
+  padding: 5px;
+}
+
+.history .new-history table thead {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.history .new-history table tbody {
+  font-size: 15px;
+}

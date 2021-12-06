@@ -12,7 +12,8 @@ function Input({
   focused,
   changeHandler,
   value,
-  disable,
+  min,
+  max,
 }) {
   const [error, setError] = useState("");
   const [success, setsuccess] = useState(false);
@@ -57,7 +58,8 @@ function Input({
         className={`${error !== "" ? "input-wrong" : ""} ${
           success && error === "" ? "input-success" : ""
         }`}
-        ></input>
+        min={min ? min : null}
+        max={max ? max : null}></input>
       <div className={`input-error ${error !== "" ? "error-show" : ""}`}>
         <RiErrorWarningLine />
         <p className='error-msg'>{error}</p>
